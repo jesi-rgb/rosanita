@@ -1,17 +1,30 @@
 <script>
+	import { tweened } from 'svelte/motion';
+	import { cubicOut, quintOut } from 'svelte/easing';
 	export let word;
-	let toggle = false;
-	$: letterSpacing = toggle ? 1 : 3;
-	$: fontWeight = toggle ? 500 : 700;
-	$: console.log(letterSpacing);
+
+	let initWeight = 200;
+	let fontWeight = tweened(initWeight, { duration: 200, easing: quintOut, delay: 100 });
+
+	let letterSpacing = tweened(1, { duration: 200, easing: cubicOut });
+	// $: letterSpacing = toggle ? 1 : 3;
+	$: console.log($letterSpacing);
 </script>
 
-{#key word}
-	<button
-		style="letter-spacing:{letterSpacing}px;font-weight:{fontWeight}"
-		on:mouseover={() => {
-			console.log(toggle);
-			toggle = !toggle;
-		}}>{word}</button
-	>
-{/key}
+<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+<button
+	style="letter-spacing:{$letterSpacing}px;font-weight:{$fontWeight};"
+	on:mouseover={() => {
+		if ($letterSpacing == 1) {
+			letterSpacing.set(3);
+		} else {
+			letterSpacing.set(1);
+		}
+
+		if ($fontWeight == initWeight) {
+			fontWeight.set(800);
+		} else {
+			fontWeight.set(initWeight);
+		}
+	}}>{word}</button
+>

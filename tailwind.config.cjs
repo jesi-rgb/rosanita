@@ -4,7 +4,8 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				body: ['Source Serif Pro']
+				body: ['Source Serif Pro'],
+				inter: ['Inter']
 			}
 		}
 	},
