@@ -1,6 +1,6 @@
 <script>
-	import { tweened, spring } from 'svelte/motion';
-	import { cubicOut, quintOut } from 'svelte/easing';
+	import { tweened } from 'svelte/motion';
+	import { cubicOut } from 'svelte/easing';
 	export let word;
 
 	let initWeight = 400;
@@ -12,6 +12,19 @@
 <button
 	style="letter-spacing:{$letterSpacing}px;font-weight:{$fontWeight};"
 	on:mouseover={() => {
+		if ($letterSpacing == 1) {
+			letterSpacing.set(3);
+		} else {
+			letterSpacing.set(1);
+		}
+
+		if ($fontWeight == initWeight) {
+			fontWeight.set(800);
+		} else {
+			fontWeight.set(initWeight);
+		}
+	}}
+	on:click={() => {
 		if ($letterSpacing == 1) {
 			letterSpacing.set(3);
 		} else {
