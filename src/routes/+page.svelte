@@ -1,7 +1,6 @@
 <script>
 	import HeroAnimated from '../Components/HeroAnimated.svelte';
 	import MovingWord from '../Components/MovingWord.svelte';
-	let rosanitaString = 'Rosanita';
 </script>
 
 <div class="mt-96 xl:-ml-16">
