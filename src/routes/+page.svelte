@@ -1,5 +1,6 @@
 <script>
 	import HeroAnimated from '../Components/HeroAnimated.svelte';
+	import HeroAnimatedSmooth from '../Components/HeroAnimatedSmooth.svelte';
 	import MovingWord from '../Components/MovingWord.svelte';
 </script>
 

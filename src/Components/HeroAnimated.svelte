@@ -3,13 +3,11 @@
 
 	export let text;
 
-	let styledCharacters = text.split('').map((c, i) => {
-		return { c: c, delay: 0.5 + i / 10 + 's' };
-	});
+	let chars = text.split('');
 </script>
 
-{#each styledCharacters as charStyle, i}
-	<div class="rosanita inline-block">
-		<HeroCharacter {i} char={charStyle.c} />
+{#each chars as c, i}
+	<div class="inline-block">
+		<HeroCharacter {i} char={c} />
 	</div>
 {/each}
