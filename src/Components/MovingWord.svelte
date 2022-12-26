@@ -7,8 +7,6 @@
 	let fontWeight = tweened(initWeight, { duration: 200, easing: quintOut, delay: 100 });
 
 	let letterSpacing = tweened(1, { duration: 200, easing: cubicOut });
-	// $: letterSpacing = toggle ? 1 : 3;
-	$: console.log($letterSpacing);
 </script>
 
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
