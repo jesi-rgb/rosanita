@@ -1,11 +1,10 @@
 <script>
-	import { tweened } from 'svelte/motion';
+	import { tweened, spring } from 'svelte/motion';
 	import { cubicOut, quintOut } from 'svelte/easing';
 	export let word;
 
-	let initWeight = 200;
-	let fontWeight = tweened(initWeight, { duration: 200, easing: quintOut, delay: 100 });
-
+	let initWeight = 400;
+	let fontWeight = tweened(initWeight, { duration: 200, easing: cubicOut });
 	let letterSpacing = tweened(1, { duration: 200, easing: cubicOut });
 </script>
 
