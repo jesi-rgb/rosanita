@@ -12,17 +12,12 @@
 <button
 	style="letter-spacing:{$letterSpacing}px;font-weight:{$fontWeight};"
 	on:mouseover={() => {
-		if ($letterSpacing == 1) {
-			letterSpacing.set(3);
-		} else {
-			letterSpacing.set(1);
-		}
-
-		if ($fontWeight == initWeight) {
-			fontWeight.set(800);
-		} else {
-			fontWeight.set(initWeight);
-		}
+        letterSpacing.set(3)
+        fontWeight.set(800)
+	}}
+	on:mouseleave={() => {
+        letterSpacing.set(1)
+        fontWeight.set(500)
 	}}
 	on:click={() => {
 		if ($letterSpacing == 1) {
