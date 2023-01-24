@@ -32,3 +32,7 @@ export function decayingWeights(hoveredChar, total, step) {
 function clamp(num, min, max) {
 	return num <= min ? min : num >= max ? max : num;
 }
+
+export const scale = (num, in_min, in_max, out_min, out_max) => {
+	return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
+};

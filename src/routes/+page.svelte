@@ -4,19 +4,20 @@
 	import MovingWord from '../Components/MovingWord.svelte';
 
 	import { Flower } from 'phosphor-svelte';
+	import HeroAnimatedSmoother from '../Components/HeroAnimatedSmoother.svelte';
 </script>
 
 <div class="mt-[600px] ml-5 md:ml-10">
 	<!-- <div class="rosanita text-9xl font-bold tracking-tight text-red-500">Rosanita</div> -->
 
 	<div
-		class="absolute text-9xl right-0 top-0 opacity-40 rotate-12 hover:rotate-45 transition-transform duration-700"
+		class="absolute text-9xl right-3 top-0 opacity-40 rotate-12 hover:rotate-45 transition-transform duration-700"
 	>
 		<Flower weight={'thin'} />
 	</div>
 
 	<div
-		class="absolute text-6xl right-28 top-16 opacity-70 rotate-6 hover:rotate-45 transition-transform duration-700"
+		class="absolute text-6xl right-32 top-16 opacity-70 rotate-6 hover:rotate-45 transition-transform duration-700"
 	>
 		<Flower weight={'duotone'} />
 	</div>
@@ -29,7 +30,7 @@
 
 	<div class="mb-10">Hiii, I'm</div>
 	<div>
-		<HeroAnimated text={'Rosanita'} />
+		<HeroAnimatedSmoother text={'Rosanita'} />
 	</div>
 
 	<p class="my-10 text-lg max-w-xs">
